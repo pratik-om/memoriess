@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories Albums</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f7f8fc;
+    padding:20px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.header h1{
+    font-size:50px;
+    color:#101a5c;
+}
+
+.header p{
+    color:#666;
+    margin-top:10px;
+}
+
+.albums{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.album{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.album:hover{
+    transform:translateY(-5px);
+}
+
+.album h2{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.album p{
+    color:#777;
+}
+
+.create{
+    background:#6c63ff;
+    color:white;
+}
+
+.create p{
+    color:white;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:30px;
+    text-decoration:none;
+    color:#6c63ff;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+    .header h1{
+        font-size:38px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn">⬅ Back to Home</a>
+
+<div class="header">
+    <h1>Memories</h1>
+    <p>Select an album to view photos and videos</p>
+</div>
+
+<div class="albums">
+
+    <a href="banaras.html" class="album">
+        <h2>🛕 Banaras Memories</h2>
+        <p>Photos & videos from Banaras trip</p>
+    </a>
+
+    <a href="nanital.html" class="album">
+        <h2>🏔 Nanital Memories</h2>
+        <p>Photos & videos from Nanital trip</p>
+    </a>
+
+    <a href="family.html" class="album">
+        <h2>👨‍👩‍👧 Family Functions</h2>
+        <p>Family events and celebrations</p>
+    </a>
+
+    <a href="school.html" class="album">
+        <h2>🎓 School Days</h2>
+        <p>Old school memories</p>
+    </a>
+
+    <a href="#" class="album create">
+        <h2>➕ Create New Album</h2>
+        <p>Add a new memory collection</p>
+    </a>
+
+</div>
+
+</body>
+</html>
