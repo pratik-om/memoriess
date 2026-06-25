@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banaras Memories</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f7f8fc;
+    padding:20px;
+}
+
+.back{
+    text-decoration:none;
+    color:#6c63ff;
+    font-weight:600;
+}
+
+.header{
+    text-align:center;
+    margin:20px 0 40px;
+}
+
+.header h1{
+    font-size:50px;
+    color:#101a5c;
+}
+
+.header p{
+    color:#666;
+}
+
+.upload-box{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+input{
+    margin-top:15px;
+}
+
+.gallery{
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img,
+.gallery video{
+    width:100%;
+    border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="albums.html" class="back">⬅ Back to Albums</a>
+
+<div class="header">
+    <h1>🛕 Banaras Memories</h1>
+    <p>Photos and videos from Banaras</p>
+</div>
+
+<div class="upload-box">
+    <h2>Upload Photos & Videos</h2>
+
+    <input type="file" id="mediaInput" multiple accept="image/*,video/*">
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+
+const mediaInput = document.getElementById("mediaInput");
+const gallery = document.getElementById("gallery");
+
+mediaInput.addEventListener("change", function(){
+
+    const files = this.files;
+
+    for(let file of files){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            if(file.type.startsWith("image")){
+
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                gallery.appendChild(img);
+
+            }else if(file.type.startsWith("video")){
+
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                gallery.appendChild(video);
+
+            }
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
